@@ -1,0 +1,24 @@
+{
+  "name": "je.frontstack",
+  "version": "1.0.0",
+  "description": "a custom front-end dev stack, preconfigured for many common tasks.",
+  "main": "gulp watch",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "https://none.yet"
+  },
+  "scripts": {
+    "start": "gulp watch"
+  },
+  "author": "Jeff Eoff",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.3.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp.spritesmith": "^3.6.1"
+  }
+}

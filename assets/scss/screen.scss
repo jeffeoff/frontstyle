@@ -1,0 +1,49 @@
+// screen.scss
+// ---
+// main entry point and importer for screen styling sass files.
+// the order of @import's here is important.
+
+// NOTE: Vendor Libraries
+// The vendor sass imported here is included already, and is not installed by npm.
+// while this locks in the versions included, it also reduces a lot of the cruft added by these packages
+// if you install them via npm, bundler, etc. Also, some of these libraries would require gem or bower or
+// other package management systems to install, and I want to keep this entire front end stack as simple
+// as possible and relying only on npm and node.
+
+// scss version of the eric meyer css reset: https://github.com/adamstac/meyer-reset
+@import 'vendor/meyer-reset';
+
+// really simple organized media queries with sass: http://breakpoint-sass.com/
+@import 'vendor/breakpoint';
+
+// bourbon: a powerful mixin library // http://bourbon.io/docs/
+@import 'vendor/bourbon/bourbon';
+
+//  suzy 2 grid system: http://susydocs.oddbird.net/en/latest/
+@import 'vendor/susy';
+
+// overall site variables and settings.
+@import 'settings';
+
+// font-awesome icons and utility classes: http://fortawesome.github.io/Font-Awesome/examples/
+// we load this after settings so it can use our $base for base font-size variable.
+@import 'vendor/font-awesome/font-awesome';
+
+// Comment the next line out if you don't have any sprites.
+//
+// To generate sprites, put sprite image files in assets/images/sprites/
+// then run 'gulp sprites' to generate a spritesheet (assets/images/sprites.png)
+// _sprites.scss will also be generated and placed in assets/scss/ automatically
+//
+// Use the sprite mixin ( @include sprite(name-of-original-sprite); ) to use sprites.
+@import 'sprites';
+@import 'sprite-mixins';
+
+// any custom mixins of our own creation.
+@import 'mixins';
+
+// overall body and element styling and general layout goes in here.
+@import 'layout';
+
+// from here import other partials in a modular fashion,
+// moving from general to more specific.

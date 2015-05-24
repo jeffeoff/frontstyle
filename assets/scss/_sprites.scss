@@ -1,0 +1,114 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$duke-name: 'duke';
+$duke-x: 153px;
+$duke-y: 0px;
+$duke-offset-x: -153px;
+$duke-offset-y: 0px;
+$duke-width: 48px;
+$duke-height: 64px;
+$duke-total-width: 201px;
+$duke-total-height: 189px;
+$duke-image: 'sprites.png';
+$duke: (153px, 0px, -153px, 0px, 48px, 64px, 201px, 189px, 'sprites.png', 'duke', );
+$dukesmoke-name: 'dukesmoke';
+$dukesmoke-x: 0px;
+$dukesmoke-y: 125px;
+$dukesmoke-offset-x: 0px;
+$dukesmoke-offset-y: -125px;
+$dukesmoke-width: 48px;
+$dukesmoke-height: 64px;
+$dukesmoke-total-width: 201px;
+$dukesmoke-total-height: 189px;
+$dukesmoke-image: 'sprites.png';
+$dukesmoke: (0px, 125px, 0px, -125px, 48px, 64px, 201px, 189px, 'sprites.png', 'dukesmoke', );
+$dukeyell-name: 'dukeyell';
+$dukeyell-x: 58px;
+$dukeyell-y: 125px;
+$dukeyell-offset-x: -58px;
+$dukeyell-offset-y: -125px;
+$dukeyell-width: 48px;
+$dukeyell-height: 64px;
+$dukeyell-total-width: 201px;
+$dukeyell-total-height: 189px;
+$dukeyell-image: 'sprites.png';
+$dukeyell: (58px, 125px, -58px, -125px, 48px, 64px, 201px, 189px, 'sprites.png', 'dukeyell', );
+$monster-name: 'monster';
+$monster-x: 0px;
+$monster-y: 0px;
+$monster-offset-x: 0px;
+$monster-offset-y: 0px;
+$monster-width: 143px;
+$monster-height: 115px;
+$monster-total-width: 201px;
+$monster-total-height: 189px;
+$monster-image: 'sprites.png';
+$monster: (0px, 0px, 0px, 0px, 143px, 115px, 201px, 189px, 'sprites.png', 'monster', );
+$spritesheet-width: 201px;
+$spritesheet-height: 189px;
+$spritesheet-image: 'sprites.png';
+$spritesheet-sprites: ($duke, $dukesmoke, $dukeyell, $monster, );
+$spritesheet: (201px, 189px, 'sprites.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

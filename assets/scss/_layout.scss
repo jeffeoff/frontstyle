@@ -1,0 +1,95 @@
+// main layout sass for overall html element styling and top level layout.
+
+body {
+	@include container;
+	font-size: $base;
+	line-height: 1.4;
+	font-family: sans-serif;
+	color: $text;
+	background-color: $bg;
+	margin: $dmrg;
+}
+
+h1, h2, h3, p { margin-bottom: $mrg }
+
+h1 {
+  font-size: $base * 3;
+  font-weight: 700;
+}
+h2 { font-size: $base * 2.5 }
+h3 { font-size: $base * 2 }
+h4 { font-size: $base * 1.5 }
+h5 { font-size: $base }
+
+b, strong, h4 { font-weight: 700; }
+h5 { font-weight: 300; }
+em, i { font-style: italic; }
+
+code, pre { font-family: $monospace }
+
+small { font-size: $base * 0.8 }
+big { font-size: $base * 1.2 }
+
+section { margin-bottom: $dmrg; }
+
+a {
+  text-decoration: none;
+  color: $gray;
+  @include transition(all 0.3s);
+
+  &:hover {
+    text-decoration: underline;
+    color: $light-gray;
+  }
+}
+
+.indent { margin-left: $mrg; }
+
+.list {
+	margin: 0 0 $mrg $mrg;
+
+	li {
+		list-style-type: disc;
+		margin-left: $mrg;
+	}
+}
+
+.list.square li { list-style-type: square; }
+.list.number li { list-style-type: decimal; }
+
+.panel {
+	display: block;
+	padding: $mrg;
+	margin-bottom: $mrg;
+	background-color: $lighter-gray;
+	border-radius: $hmrg;
+	border: 1px solid $light-gray;
+}
+
+.columns-3 {
+	@include clearfix;
+	@include container;
+
+	> .column {
+		@include span(4);
+		padding: $mrg;
+
+		@include susy-breakpoint($break-tablet, 12) {
+			@include span(6);
+		}
+
+		@include susy-breakpoint($break-small, 12) {
+			@include span(12);
+		}
+	}
+}
+
+.sprite {
+	display: inline-block;
+	margin: $mrg;
+
+	&.duke { @include sprite($duke); }
+	&.dukesmoke { @include sprite($dukesmoke); }
+	&.dukeyell { @include sprite($dukeyell); }
+	&.monster { @include sprite($monster); }
+}
