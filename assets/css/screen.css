@@ -1974,25 +1974,25 @@ a {
 .sprite {
   display: inline-block;
   margin: 12px; }
-  .sprite.duke {
+  .sprite.bear {
     background-image: url("../images/sprites.png");
-    background-position: -153px 0px;
-    width: 48px;
-    height: 64px; }
-  .sprite.dukesmoke {
-    background-image: url("../images/sprites.png");
-    background-position: 0px -125px;
-    width: 48px;
-    height: 64px; }
-  .sprite.dukeyell {
-    background-image: url("../images/sprites.png");
-    background-position: -58px -125px;
-    width: 48px;
-    height: 64px; }
-  .sprite.monster {
+    background-position: -171px 0px;
+    width: 109px;
+    height: 106px; }
+  .sprite.dragon {
     background-image: url("../images/sprites.png");
     background-position: 0px 0px;
-    width: 143px;
-    height: 115px; }
+    width: 161px;
+    height: 184px; }
+  .sprite.deflect {
+    background-image: url("../images/sprites.png");
+    background-position: -171px -116px;
+    width: 46px;
+    height: 46px; }
+  .sprite.sun {
+    background-image: url("../images/sprites.png");
+    background-position: 0px -194px;
+    width: 85px;
+    height: 85px; }
 
 /*# sourceMappingURL=screen.css.map */

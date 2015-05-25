@@ -88,8 +88,8 @@ a {
 	display: inline-block;
 	margin: $mrg;
 
-	&.duke { @include sprite($duke); }
-	&.dukesmoke { @include sprite($dukesmoke); }
-	&.dukeyell { @include sprite($dukeyell); }
-	&.monster { @include sprite($monster); }
+	&.bear { @include sprite($bear); }
+	&.dragon { @include sprite($dragon); }
+	&.deflect { @include sprite($deflect); }
+	&.sun { @include sprite($sun); }
 }

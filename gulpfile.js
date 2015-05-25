@@ -31,7 +31,8 @@ gulp.task('sprites', function () {
     	imgName: 'sprites.png',
     	cssName: '_sprites.scss',
 			padding: 10,
-			algorithm: 'binary-tree'
+			algorithm: 'binary-tree',
+			cssOpts: {functions: false}
   }));
 
 	spriteData.img.pipe(gulp.dest('./assets/images/'));

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	    <title>je.frontstack</title>
+	    <title>frontstyle</title>
 
 	    <!-- Viewport mobile tag for sensible mobile support -->
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,8 +11,8 @@
 	<body>
 
 <section>
-	<h1>je.frontstack</h1>
-	<p>A portable front-end setup for efficiently handling a variety of front-end development tasks. je.frontstack  provides the following tasks, pre-configured:</p>
+	<h1>frontstyle</h1>
+	<p>A portable front-end styling (scss) setup for efficiently handling a variety of styling tasks. frontstyle  provides the following tasks, pre-configured:</p>
 
 	<ul class="list square">
 		<li><i>fast</i> compilation of scss to css (with sourcemaps): <code>gulp css</code></li>
@@ -40,8 +40,8 @@
 </section>
 
 <section>
-<h2>Sass Stack</h2>
-	<p>je.frontstack comes pre-configured with the following incorporated into sass:</p>
+<h2>SASS Stack</h2>
+	<p>frontstyle comes pre-configured with the following incorporated into sass:</p>
 
 	<ul class="list square">
 		<li><a href="https://github.com/adamstac/meyer-reset">meyer reset</a> css reset</li>
@@ -51,7 +51,8 @@
 		<li><a href="http://fortawesome.github.io/Font-Awesome/examples/">font-awesome</a> beautiful, scaling icons and utilities</li>
 	</ul>
 
-	<p><small>Note: The vendor sass stack is directly @imported via .scss files, not installed by npm. while this locks in the versions included, it also reduces a lot of the cruft added by these packages if you install them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package management systems to install, and I want to keep this entire front end stack as simple as possible and relying only on npm and node.</small></p>
+	<p><small>Note: The vendor SASS stack is directly @imported via .scss files, not installed by npm. while this locks in the versions included, it also reduces a lot of the cruft added by these packages if you install them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package management systems to install, and I want to keep this entire front end stack as simple as possible and relying only on npm and node.</small></p>
+	<p><small>To remove any component of the SASS stack, simply delete the component subdirectory under assets/scss/vendor/, then remove the associated @import line from _screen.scss.</small></p>
 </section>
 
 <section>
@@ -61,7 +62,7 @@
 	<ul class="list square">
 		<li>An error in your scss will not stop the watch process, just fix and save and move on.</li>
 		<li>scss is compiled via node-sass, a node port of libass, which is much faster as nearly as feature complete as ruby-sass.</li>
-		<li>_sprite.scss is automatically updated when sprits are created. use the `@include sprite([sprite img filename without ext]);` to add sprites throughout your scss.</li>
+		<li>_sprite.scss is automatically updated when sprits are created. use the `@include sprite([sprite img filename without extension]);` to add sprites throughout your scss.</li>
 		<li>Sprite generation is not part of css compilation, to keep compilation fast. You only need to run `gulp sprites` each time you add new sprites to assets/images/sprites/.</li>
 	</ul>
 </section>
@@ -77,10 +78,10 @@
 
 	<section>
 		<h2>Sprites</h2>
-		<span class="sprite duke"></span>
-		<span class="sprite dukesmoke"></span>
-		<span class="sprite dukeyell"></span>
-		<span class="sprite monster"></span>
+		<span class="sprite bear"></span>
+		<span class="sprite deflect"></span>
+		<span class="sprite dragon"></span>
+		<span class="sprite sun"></span>
 	</section>
 
 	<h2>Susy Grid &amp; Breakpoint</h2>
