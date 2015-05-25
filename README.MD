@@ -22,7 +22,7 @@ Depending on your environment, you may need to run this as `sudo npm install`.
 
 ### SASS Stack ###
 
-frontstyle comes pre-configured with the following incorporated into sass:
+frontstyle comes pre-configured with the following:
 
 * [meyer-reset](https://github.com/adamstac/meyer-reset) css reset
 * [bourbon](http://bourbon.io/docs/) a powerful sass mixin library
@@ -38,6 +38,6 @@ frontstyle comes pre-configured with the following incorporated into sass:
 Some helpful notes and nice things you don't have to worry about.
 
 * An error in your scss will not stop the watch process, just fix and save and move on.
-* scss is compiled via node-sass, a node port of libass, which is much faster as nearly as feature complete as ruby-sass.
-* _sprite.scss is automatically updated when sprits are created. use the `@include sprite([sprite img filename without extension]);` to add sprites throughout your scss.
+* scss is compiled via node-sass, a node port of libass, which is much faster, and as nearly as feature complete as ruby-sass.
+* _sprite.scss is automatically updated when sprites are created. use the `@include sprite([sprite img filename without extension]);` to add sprites throughout your scss.
 * Sprite generation is not part of css compilation, to keep compilation fast. You only need to run `gulp sprites` each time you add new sprites to assets/images/sprites/.
