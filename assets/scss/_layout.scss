@@ -25,7 +25,11 @@ b, strong, h4 { font-weight: 700; }
 h5 { font-weight: 300; }
 em, i { font-style: italic; }
 
-code, pre { font-family: $monospace }
+code,
+pre {
+	font-family: $monospace;
+	color: $gray;
+}
 
 small { font-size: $base * 0.8 }
 big { font-size: $base * 1.2 }
