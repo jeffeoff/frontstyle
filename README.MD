@@ -1,7 +1,7 @@
 # frontstyle
 A portable front-end styling (scss) setup for efficiently handling a variety of styling tasks. frontstyle  provides the following tasks, pre-configured:
 
-* _fast_ compilation of scss to css (with [autoprefixing](https://www.npmjs.com/package/autoprefixer) and sourcemaps): `gulp css`
+* _fast_ compilation of scss to css (with sourcemaps): `gulp css`
 * compilation of scss to css, as scss changes: `gulp watch`
 * as above, but with [livereload](http://livereload.com/)<sup>&#8224;</sup>: `gulp watch-reload`
 * sprite generation: `gulp sprites`
