@@ -1,12 +1,12 @@
 {
-  "name": "je.frontstack",
+  "name": "frontstyle",
   "version": "1.0.0",
-  "description": "a custom front-end dev stack, preconfigured for many common tasks.",
+  "description": "a custom front-end styling stack, preconfigured for many common tasks.",
   "main": "gulp watch",
   "private": "true",
   "repository": {
     "type": "git",
-    "url": "https://none.yet"
+    "url": "https://github.com/jeffeoff/frontstyle"
   },
   "scripts": {
     "start": "gulp watch"
