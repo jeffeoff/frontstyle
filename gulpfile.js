@@ -8,7 +8,7 @@ var spritesmith = require('gulp.spritesmith');
 
 
 gulp.task('css', function () {
-	gulp.src('./assets/scss/*.scss')
+	gulp.src('./assets/sass/*.scss')
 	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
 	.pipe(sourcemaps.write('.'))
@@ -16,7 +16,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('css-reload', function () {
-	gulp.src('./assets/scss/*.scss')
+	gulp.src('./assets/sass/*.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write('.'))
@@ -36,15 +36,21 @@ gulp.task('sprites', function () {
   }));
 
 	spriteData.img.pipe(gulp.dest('./assets/images/'));
-	spriteData.css.pipe(gulp.dest('./assets/scss/'));
+	spriteData.css.pipe(gulp.dest('./assets/sass/'));
 });
 
 
+gulp.task('browser-reload',function(){
+  gulp.src(['./assets/js/**/*.js'])
+  .pipe(livereload())
+});
+
 gulp.task('watch', function() {
-	gulp.watch('./assets/scss/*.scss', ['css']);
+	gulp.watch('./assets/sass/**/*.scss', ['css']);
 });
 
 gulp.task('watch-reload', function() {
 	livereload.listen();
-	gulp.watch('./assets/scss/*.scss', ['css-reload']);
+	gulp.watch('./assets/sass/**/*.scss', ['css-reload']);
+	gulp.watch(['./assets/js/**/*.js'], ['browser-reload']);
 });

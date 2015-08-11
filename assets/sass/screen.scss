@@ -42,9 +42,13 @@
 // any custom mixins of our own creation.
 @import 'mixins';
 
-// overall body and element styling and general layout goes in here.
-@import 'layout';
+// overall global styling and general layout goes in here.
+@import 'global';
 
 
 // from here import other partials in a modular fashion,
 // moving from general to more specific.
+// @import 'components/header';
+// @import 'components/login';
+// @import 'components/footer';
+// etc ...
