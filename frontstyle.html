@@ -2,10 +2,8 @@
 <html>
 	<head>
 	    <title>frontstyle</title>
-
 	    <!-- Viewport mobile tag for sensible mobile support -->
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
 	    <link rel="stylesheet" href="assets/css/screen.css">
 	</head>
 	<body>
@@ -19,24 +17,22 @@
 		<li>compilation of scss to css, as scss changes: <code>gulp watch</code></li>
 		<li>as above, but with <a href="http://livereload.com/">livereload</a><sup>&#8224;</sup>: <code>gulp watch-reload</code></li>
 		<li>sprite generation: <code>gulp sprites</code></li>
+		<li>production output: <code>gulp production</code>: autoprefixes, uglifies, and concats css + uglifies and concats js.</li>
 	</ul>
 
-	<p><sup>&#8224;</sup> <small><code>gulp watch-reload</code> loads a tiny livereload server which interfaces seamlessly with the livereload plugin. Make sure the little circle in the plugin's toolbar icon is filled-in, you may have to click the toolbar icon to activate it.</small></p>
+	<p><sup>&#8224;</sup> <small><code>gulp watch-reload</code> loads a tiny livereload server which interfaces
+	seamlessly with the livereload plugin. Make sure the little circle in the plugin's toolbar icon is filled-in,
+	you may have to click the toolbar icon to activate it.</small></p>
 </section>
 
 <section>
 <h2>Installation</h2>
 
 	<ol class="list number">
-		<li>You must have [node.js](https://nodejs.org/) installed, preferably via <a href="https://github.com/creationix/nvm">nvm</a>.</li>
-		<li>To install, run the following command from the project's root directory:</li>
+		<li>You must have <a href="https://nodejs.org/">node.js</a> installed, preferably via <a href="https://github.com/creationix/nvm">nvm</a>.</li>
+		<li>To install, run <code>npm install</code> from the project's root directory. You may need to <code>sudo npm install</code></li>
 	</ol>
 
-	<code class="panel">
-		$ npm install
-	</code>
-
-	<p>Depending on your environment, you may need to run this as <code>sudo npm install</code>.</p>
 </section>
 
 <section>
@@ -44,23 +40,28 @@
 	<p>frontstyle comes pre-configured with the following incorporated into sass:</p>
 
 	<ul class="list square">
-		<li><a href="https://github.com/adamstac/meyer-reset">meyer reset</a> css reset</li>
-		<li><a href="http://bourbon.io/docs/">bourbon</a> a powerful sass mixin library</li>
-		<li><a href="http://susydocs.oddbird.net/">suzy 2</a> grid system</li>
-		<li><a href="http://breakpoint-sass.com/">breakpoint</a> simple sassy media queries</li>
-		<li><a href="http://fortawesome.github.io/Font-Awesome/examples/">font-awesome</a> beautiful, scaling icons and utilities</li>
+		<li><a href="https://necolas.github.io/normalize.css/">normalize.css</a>, a css reset.</li>
+		<li><a href="http://bourbon.io/docs/">bourbon</a>, a sass mixin library.</li>
+		<li><a href="http://neat.bourbon.io/">bourbon neat</a>, a grid system built on bourbon.</li>
+		<li><a href="http://include-media.com/">include-media</a>, robust and simple sass media queries.</li>
+		<li><a href="http://fortawesome.github.io/Font-Awesome/examples/">font-awesome</a>, beautiful icons.</li>
 	</ul>
 
-	<p><small>Note: The vendor SASS stack is directly @imported via .scss files, not installed by npm. while this locks in the versions included, it also reduces a lot of the cruft added by these packages if you install them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package management systems to install, and I want to keep this entire front end stack as simple as possible and relying only on npm and node.</small></p>
-	<p><small>To remove any component of the SASS stack, simply delete the component subdirectory under assets/scss/vendor/, then remove the associated @import line from _screen.scss.</small></p>
+	<p><small>Note: The vendor SASS stack is directly @imported via .scss files, not installed by npm. while this
+	locks in the versions included, it also reduces a lot of the cruft added by these packages if you install
+	them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package
+	management systems to install, and I want to keep this entire front end stack as simple as possible and
+	relying only on npm and node.</small></p>
+
+	<p><small>To remove any component of the SASS stack, simply delete the component subdirectory under
+	assets/scss/vendor/, then remove the associated @import line from _screen.scss.</small></p>
 </section>
 
 <section>
 <h2>Extras</h2>
-	<p>Some helpful notes and nice things you don't have to worry about.</p>
+	<p>Some helpful notes.</p>
 
 	<ul class="list square">
-		<li>An error in your scss will not stop the watch process, just fix and save and move on.</li>
 		<li>scss is compiled via node-sass, a node port of libass, which is much faster as nearly as feature complete as ruby-sass.</li>
 		<li>_sprite.scss is automatically updated when sprits are created. use the <code>@include sprite([sprite img filename without extension]);</code> to add sprites throughout your scss.</li>
 		<li>Sprite generation is not part of css compilation, to keep compilation fast. You only need to run <code>gulp sprites</code> each time you add new sprites to assets/images/sprites/.</li>
@@ -84,8 +85,8 @@
 		<span class="sprite sun"></span>
 	</section>
 
-	<h2>Susy Grid &amp; Breakpoint</h2>
-	<p>Three columns. Collapses to two columns at 768px or lower. Collapses to one column at 500px or lower.
+	<h2>Bourbon Neat Grid &amp; Include-Media</h2>
+	<p>Three columns. Collapses to two columns at 970px or lower. Collapses to one column at 750px or lower.
 
 	<section class="columns-3">
 		<div class="column">
@@ -104,6 +105,9 @@
 			<p>"Thank you," he answered gratefully.</p>
 		</div>
 	</section>
+
+	<!-- javascript -->
+	<script src="assets/js/app.js"></script>
 
 	</body>
 </html>

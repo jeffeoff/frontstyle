@@ -1,7 +1,6 @@
 // main layout sass for overall html element styling and top level layout.
 
 body {
-	@include container;
 	font-size: $base;
 	line-height: 1.4;
 	font-family: sans-serif;
@@ -28,7 +27,7 @@ em, i { font-style: italic; }
 code,
 pre {
 	font-family: $monospace;
-	color: $gray;
+	color: $red;
 }
 
 small { font-size: $base * 0.8 }
@@ -38,23 +37,25 @@ section { margin-bottom: $dmrg; }
 
 a {
   text-decoration: none;
-  color: $gray;
+  color: $blue;
   @include transition(all 0.3s);
 
   &:hover {
     text-decoration: underline;
-    color: $light-gray;
+    color: lighten($blue, 20%);
   }
 }
 
 .indent { margin-left: $mrg; }
 
 .list {
-	margin: 0 0 $mrg $mrg;
+	margin: 0 0 0 $mrg;
+	padding: 0;
 
 	li {
 		list-style-type: disc;
 		margin-left: $mrg;
+		margin-bottom: $mrg;
 	}
 }
 
@@ -65,25 +66,30 @@ a {
 	display: block;
 	padding: $mrg;
 	margin-bottom: $mrg;
-	background-color: $lighter-gray;
+	background-color: $gray-lighter;
 	border-radius: $hmrg;
-	border: 1px solid $light-gray;
+	border: 1px solid $gray-light;
 }
 
 .columns-3 {
-	@include clearfix;
-	@include container;
+	// neat grid: set on the row containing columns
+	@include outer-container();
 
 	> .column {
-		@include span(4);
-		padding: $mrg;
+		// neat grid: to set column widths.
+		@include span-columns(4);
+		@include omega(3n);
 
-		@include susy-breakpoint($break-tablet, 12) {
-			@include span(6);
+		// include-media: to change column widths at different breakpoints
+		@include media("<=sm") {
+			@include span-columns(6);
+			@include omega(2n);
 		}
 
-		@include susy-breakpoint($break-small, 12) {
-			@include span(12);
+		@include media("<=xs") {
+			@include span-columns(12);
+			@include omega();
+
 		}
 	}
 }

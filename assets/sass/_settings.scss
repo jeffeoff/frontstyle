@@ -1,28 +1,23 @@
 // sass settings and variables
 
-// breakpoints
-$break-tablet: (max-width: 768px);
-$break-small: (max-width 500px);
+// breakpoints map for include-media.
+$breakpoints: (xs: 750px, sm: 970px, lg: 1170px);
 
-// susy grid default
-$susy: (
-  container: 100%,
-  columns: 12,
-  gutters: 0,
-  gutter-position: inside,
-  global-box-sizing: border-box,
-);
-
-* { box-sizing: border-box }
+// neat grid settings
+$grid-columns: 12 !global;
+$max-width: 100% !global;
+$border-box-sizing: true !global;
 
 // colors
 $black: #000;
 $white: #fff;
-$darker-gray: #222;
-$dark-gray: #555;
+$gray-darker: #222;
+$gray-dark: #555;
 $gray: #888;
-$light-gray: #bbb;
-$lighter-gray: #e4e4e4;
+$gray-light: #bbb;
+$gray-lighter: #e4e4e4;
+$red: #cb3736;
+$blue: #285b76;
 
 // layout variables
 $base: 16px; // our base font-size;
@@ -31,5 +26,5 @@ $hmrg: ($mrg * 0.50);
 $dmrg: ($mrg * 2.0);
 $qmrg: ($mrg * 0.25);
 
-$text: $darker-gray;
+$text: $gray-darker;
 $bg: $white;

@@ -10,22 +10,22 @@
 // other package management systems to install, and I want to keep this entire front end stack as simple
 // as possible and relying only on npm and node.
 
-// scss version of the eric meyer css reset: https://github.com/adamstac/meyer-reset
-@import 'vendor/meyer-reset';
+// normalize.css 3.0.2: a css reset.
+@import 'vendor/normalize';
 
-// really simple organized media queries with sass: http://breakpoint-sass.com/
-@import 'vendor/breakpoint';
-
-// bourbon: a powerful mixin library // http://bourbon.io/docs/
+// bourbon v4.2.4: a powerful mixin library - http://bourbon.io/docs/
 @import 'vendor/bourbon/bourbon';
 
-//  suzy 2 grid system: http://susydocs.oddbird.net/en/latest/
-@import 'vendor/susy';
+// bourbon neat v1.7.2: simple semantic grid system based on bourbon - http://neat.bourbon.io/
+@import 'vendor/neat/neat';
+
+// include-media v1.4.1: simple, powerful media queries - http://include-media.com/
+@import 'vendor/include-media';
 
 // overall site variables and settings.
 @import 'settings';
 
-// font-awesome icons and utility classes: http://fortawesome.github.io/Font-Awesome/examples/
+// font-awesome v4.4.0 - icons and utility classes: http://fortawesome.github.io/Font-Awesome/examples/
 // we load this after settings so it can use our $base for base font-size variable.
 @import 'vendor/font-awesome/font-awesome';
 
@@ -35,11 +35,14 @@
 // then run 'gulp sprites' to generate a spritesheet (assets/images/sprites.png)
 // _sprites.scss will also be generated and placed in assets/scss/ automatically
 //
-// Use the sprite mixin ( @include sprite(name-of-original-sprite); ) to use sprites.
+// Use the sprite mixin:
+//
+//  @include sprite(name-of-sprite);
+//
 @import 'sprites';
 @import 'sprite-mixins';
 
-// any custom mixins of our own creation.
+// any custom global mixins of our own creation.
 @import 'mixins';
 
 // overall global styling and general layout goes in here.
