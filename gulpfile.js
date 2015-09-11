@@ -63,15 +63,15 @@ gulp.task('production-css', ['css'], function() {
 		.pipe(uglifycss({
 			'max-line-len': 80
 		}))
-		.pipe(concat('screen.css'))
-		.pipe(gulp.dest('./assets/css'));
+		.pipe(concat('all.css'))
+		.pipe(gulp.dest('./assets/css/production'));
 });
 
 gulp.task('production-js', function() {
 	gulp.src('./assets/js/**/*.js')
 		.pipe(uglify())
-		.pipe(concat('app.js'))
-		.pipe(gulp.dest('./assets/js'));
+		.pipe(concat('all.js'))
+		.pipe(gulp.dest('./assets/js/production'));
 });
 
 gulp.task('sprites', function () {
