@@ -31,13 +31,13 @@ gulp.task('uglify-css', function() {
 		.pipe(uglifycss({
 			'max-line-len': 80
 		}))
-		.pipe(gulp.dest('./assets/production'));
+		.pipe(gulp.dest('./assets/production/uglified'));
 });
 
 gulp.task('uglify-js', function() {
   gulp.src('./assets/js/**/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('./assets/production'));
+    .pipe(gulp.dest('./assets/production/uglified'));
 });
 
 gulp.task('prefix', function() {
@@ -45,13 +45,19 @@ gulp.task('prefix', function() {
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions', 'ie >= 8'],
 			cascade: false }))
-		.pipe(gulp.dest('./assets/production'));
+		.pipe(gulp.dest('./assets/production/prefixed'));
 });
 
 gulp.task('concat-css', function() {
 	gulp.src('./assets/css/**/*.css')
-		.pipe(concat('screen.css'))
-		.pipe(gulp.dest('./assets/production'));
+		.pipe(concat('all.css'))
+		.pipe(gulp.dest('./assets/production/concat'));
+});
+
+gulp.task('concat-js', function() {
+	gulp.src('./assets/js/**/*.js')
+		.pipe(concat('all.js'))
+		.pipe(gulp.dest('./assets/production/concat'));
 });
 
 gulp.task('production-css', ['css'], function() {
