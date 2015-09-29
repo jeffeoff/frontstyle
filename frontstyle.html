@@ -4,8 +4,7 @@
 	    <title>frontstyle</title>
 	    <!-- Viewport mobile tag for sensible mobile support -->
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-			<link rel="stylesheet" href="assets/css/normalize.css">
-			<link rel="stylesheet" href="assets/css/screen.css">
+			<link rel="stylesheet" href="assets/production/production.css">
 	</head>
 	<body>
 
@@ -48,14 +47,11 @@
 		<li><a href="http://fortawesome.github.io/Font-Awesome/examples/">font-awesome</a>, beautiful icons.</li>
 	</ul>
 
-	<p><small>Note: The vendor SASS stack is directly @imported via .scss files, not installed by npm. while this
+	<p><small>Note: Some of the vendor SASS stack is directly @imported via .scss files, not installed by npm. While this
 	locks in the versions included, it also reduces a lot of the cruft added by these packages if you install
 	them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package
 	management systems to install, and I want to keep this entire front end stack as simple as possible and
 	relying only on npm and node.</small></p>
-
-	<p><small>To remove any component of the SASS stack, simply delete the component subdirectory under
-	assets/scss/vendor/, then remove the associated @import line from _screen.scss.</small></p>
 </section>
 
 <section>
@@ -108,7 +104,7 @@
 	</section>
 
 	<!-- javascript -->
-	<script src="assets/js/app.js"></script>
+	<script src="assets/production/production.js"></script>
 
 	</body>
 </html>

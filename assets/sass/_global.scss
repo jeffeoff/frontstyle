@@ -89,7 +89,6 @@ a {
 		@include media("<=xs") {
 			@include span-columns(12);
 			@include omega();
-
 		}
 	}
 }

@@ -28,9 +28,7 @@ frontstyle comes pre-configured with the following:
 * [font-awesome](http://fortawesome.github.io/Font-Awesome/examples/) v4.4.0, beautiful icons.
 
 
-<small>Note: The vendor SASS stack is directly @imported via .scss files, not installed by npm. while this locks in the versions included, it also reduces a lot of the cruft added by these packages if you install them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package management systems to install, and I want to keep this entire front end stack as simple as possible and relying only on npm and node.</small>
-
-<small>To remove any component of the SASS stack, simply delete the component subdirectory under assets/scss/vendor/, then remove the associated @import line from _screen.scss.</small>
+<small>Note: Some of the vendor SASS stack is directly @imported via .scss files, not installed by npm. While this locks in the versions included, it also reduces a lot of the cruft added by these packages if you install them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package management systems to install, and I want to keep this entire front end stack as simple as possible and relying only on npm and node.</small>
 
 ### Extras ###
 Some helpful notes and nice things you don't have to worry about.

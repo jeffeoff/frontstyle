@@ -22,10 +22,6 @@
 // overall site variables and settings.
 @import 'settings';
 
-// font-awesome v4.4.0 - icons and utility classes: http://fortawesome.github.io/Font-Awesome/examples/
-// we load this after settings so it can use our $base for base font-size variable.
-@import 'vendor/font-awesome/font-awesome';
-
 // Comment the next line out if you don't have any sprites.
 //
 // To generate sprites, put sprite image files in assets/images/sprites/
