@@ -72,8 +72,6 @@ section {
 a {
   text-decoration: none;
   color: #285b76;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
   transition: all 0.3s; }
   a:hover {
     text-decoration: underline;

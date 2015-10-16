@@ -15,6 +15,9 @@ gulp.task('css', function () {
 	return gulp.src('./assets/sass/*.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions', 'ie >= 8'],
+			cascade: false }))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./assets/css'));
 });
@@ -62,10 +65,6 @@ gulp.task('concat-js', function() {
 
 gulp.task('production-css', ['css'], function() {
 	gulp.src('./assets/css/**/*.css')
-		.pipe(autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 8'],
-			cascade: false
-		}))
 		.pipe(uglifycss({
 			'max-line-len': 80
 		}))
