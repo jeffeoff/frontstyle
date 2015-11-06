@@ -96,10 +96,10 @@ gulp.task('sprites', function () {
 gulp.task('production', ['production-css', 'production-js'], function() {
 });
 
-gulp.task('browser-reload',function(){
-  gulp.src(['./assets/js/**/*.js'])
-  	.pipe(livereload());
-});
+function browserReload(event) {
+  gulp.src(event.path, {read: false})
+    .pipe(livereload());
+}
 
 gulp.task('watch', function() {
 	gulp.watch('./assets/sass/**/*.scss', ['css']);
@@ -108,5 +108,5 @@ gulp.task('watch', function() {
 gulp.task('watch-reload', function() {
 	livereload.listen();
 	gulp.watch('./assets/sass/**/*.scss', ['css-reload']);
-	gulp.watch(['./assets/js/**/*.js', './**/*.html'], ['browser-reload']);
+	gulp.watch(['./**/*.js', './**/*.html'], browserReload);
 });
