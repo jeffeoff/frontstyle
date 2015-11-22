@@ -113,12 +113,12 @@ function browserReload(event) {
 
 
 gulp.task('watch', function() {
-	gulp.watch('./assets/sass/**/*.scss', { interval: 200 }, ['css']);
+	gulp.watch('./assets/sass/**/*.scss', { interval: 150 }, ['css']);
 });
 
 
 gulp.task('watch-reload', function() {
 	livereload.listen();
-	gulp.watch('./assets/sass/**/*.scss', { interval: 200 }, ['css-reload']);
-	gulp.watch(['./assets/js/*.js', './*.html'], { interval: 200 }, notifyLivereload);
+	gulp.watch('./assets/sass/**/*.scss', { interval: 150 }, ['css-reload']);
+	gulp.watch(['./assets/js/*.js', './*.html'], { interval: 150 }, browserReload);
 });

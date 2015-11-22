@@ -21,10 +21,10 @@ $blue: #285b76;
 
 // layout variables
 $base: 16px; // our base font-size;
-$mrg: 12px; // most padding and margins should be a multiple of $mrg
-$hmrg: ($mrg * 0.50);
-$dmrg: ($mrg * 2.0);
-$qmrg: ($mrg * 0.25);
+$mrg: $base * 2; // most padding and margins should be a multiple of $mrg
+$hmrg: $mrg * 0.5;
+$dmrg: $mrg * 2;
+$qmrg: $mrg * 0.25;
 
 $text: $gray-darker;
 $bg: $white;

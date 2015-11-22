@@ -1,3 +1,3 @@
 var test=function(){
-  console.log("test.");
+  console.log("This another javascript file just for testing concat.");
 }();

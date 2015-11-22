@@ -25,8 +25,6 @@ frontstyle comes pre-configured with the following:
 * [bourbon](http://bourbon.io/docs/) v4.2.4, a sass mixin library.
 * [bourbon neat](http://neat.bourbon.io/) v1.7.2, a grid system built on bourbon.
 * [include-media](http://include-media.com/) v1.4.1, robust sass media queries.
-* [font-awesome](http://fortawesome.github.io/Font-Awesome/examples/) v4.4.0, beautiful icons.
-
 
 <small>Note: Some of the vendor SASS stack is directly @imported via .scss files, not installed by npm. While this locks in the versions included, it also reduces a lot of the cruft added by these packages if you install them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package management systems to install, and I want to keep this entire front end stack as simple as possible and relying only on npm and node.</small>
 

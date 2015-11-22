@@ -1,15 +1,15 @@
 // main layout sass for overall html element styling and top level layout.
+html { font-size: $base; }
 
 body {
-	font-size: $base;
 	line-height: 1.4;
 	font-family: sans-serif;
 	color: $text;
 	background-color: $bg;
-	margin: $dmrg;
+	margin: $mrg;
 }
 
-h1, h2, h3, p { margin-bottom: $mrg }
+h1, h2, h3, p { margin-bottom: $hmrg }
 
 h1 {
   font-size: $base * 3;
@@ -30,10 +30,10 @@ pre {
 	color: $red;
 }
 
-small { font-size: $base * 0.8 }
-big { font-size: $base * 1.2 }
+small { font-size: 0.8em }
+big { font-size: 1.2em }
 
-section { margin-bottom: $dmrg; }
+section { margin-bottom: $mrg; }
 
 a {
   text-decoration: none;
@@ -46,16 +46,16 @@ a {
   }
 }
 
-.indent { margin-left: $mrg; }
+.indent { margin-left: $hmrg; }
 
 .list {
-	margin: 0 0 0 $mrg;
+	margin: 0 0 0 $hmrg;
 	padding: 0;
 
 	li {
 		list-style-type: disc;
-		margin-left: $mrg;
-		margin-bottom: $mrg;
+		margin-left: $hmrg;
+		margin-bottom: $hmrg;
 	}
 }
 
@@ -64,10 +64,10 @@ a {
 
 .panel {
 	display: block;
-	padding: $mrg;
-	margin-bottom: $mrg;
+	padding: $hmrg;
+	margin-bottom: $hmrg;
 	background-color: $gray-lighter;
-	border-radius: $hmrg;
+	border-radius: $qmrg;
 	border: 1px solid $gray-light;
 }
 
@@ -95,7 +95,7 @@ a {
 
 .sprite {
 	display: inline-block;
-	margin: $mrg;
+	margin: $hmrg;
 
 	&.bear { @include sprite($bear); }
 	&.dragon { @include sprite($dragon); }
