@@ -91,6 +91,21 @@ gulp.task('production-js', function() {
 gulp.task('sprites', function () {
   var spriteData = gulp.src('./assets/images/sprites/*.*')
     .pipe(spritesmith({
+      imgName: 'sprites.png',
+      cssName: '_sprites.scss',
+      padding: 0,
+      algorithm: 'binary-tree',
+			cssOpts: {functions: false}
+    }));
+
+  spriteData.img.pipe(gulp.dest('./assets/images/'));
+  spriteData.css.pipe(gulp.dest('./assets/sass/'));
+});
+
+
+gulp.task('sprites-retina', function () {
+  var spriteData = gulp.src('./assets/images/sprites/*.*')
+    .pipe(spritesmith({
       // Filter out `@2x` (retina) images to separate spritesheet
       // e.g. `github@2x.png`, `twitter@2x.png`
       retinaSrcFilter: './assets/images/sprites/*@2x.png',

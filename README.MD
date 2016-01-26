@@ -4,7 +4,7 @@ A portable front-end styling (scss) setup for efficiently handling a variety of 
 * _fast_ compilation of scss to css (with sourcemaps): `gulp css`
 * compilation of scss to css, as scss changes: `gulp watch`
 * as above, but with [livereload](http://livereload.com/)<sup>&#8224;</sup>: `gulp watch-reload`
-* ssprite generation (supporting retina sprites): `gulp sprites`
+* sprite generation: `gulp sprites` or `gulp sprites-retina` if you also have retina sprites.
 * production output: `gulp production` (autoprefixes, uglifies, and concats css + uglifies and concats js).
 
 <sup>&#8224;</sup> <small>`gulp watch-reload` loads a tiny livereload server which interfaces seamlessly with the livereload plugin. Make sure the little circle in the plugin's toolbar icon is filled-in, you may have to click the toolbar icon to activate it.</small>
@@ -42,4 +42,4 @@ Some helpful notes and nice things you don't have to worry about.
 
 * Use `@include sprite2x($spriteFileName, $spriteFileName-2x);` mixin to add retina sprites (with fallback for non-retina).
 
-* Sprite generation is not part of css compilation, to keep compilation fast. You only need to run gulp sprites each time you add new sprites to assets/images/sprites/.
+* Sprite generation is not part of css compilation, to keep compilation fast. You only need to run `gulp sprites` (_or_ `gulp sprites-retina`) each time you add new sprites to assets/images/sprites/.
