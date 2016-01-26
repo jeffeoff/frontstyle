@@ -16,7 +16,7 @@
 		<li><i>fast</i> compilation of scss to css (with sourcemaps): <code>gulp css</code></li>
 		<li>compilation of scss to css, as scss changes: <code>gulp watch</code></li>
 		<li>as above, but with <a href="http://livereload.com/">livereload</a><sup>&#8224;</sup>: <code>gulp watch-reload</code></li>
-		<li>sprite generation: <code>gulp sprites</code></li>
+		<li>sprite generation (supporting retina sprites): <code>gulp sprites</code></li>
 		<li>production output: <code>gulp production</code>: autoprefixes, uglifies, and concats css + uglifies and concats js.</li>
 	</ul>
 
@@ -59,7 +59,11 @@
 
 	<ul class="list square">
 		<li>scss is compiled via node-sass, a node port of libass, which is much faster as nearly as feature complete as ruby-sass.</li>
-		<li>_sprite.scss is automatically updated when sprits are created. use the <code>@include sprite([sprite img filename without extension]);</code> to add sprites throughout your scss.</li>
+		<li>_sprite.scss is automatically updated when sprites are generated.</li>
+		<li>Add images to assets/images/sprites/ to include them when sprites are generated (resulting spritesheet is in assets/images/sprites.png).</li>
+		<li>Any image filenames ending in @2x will be stitched into a separate assets/images/sprites@2x.png sheet.</li>
+		<li>use <code>@include sprite($spriteFileName);</code> to add sprites throughout your scss.</li>
+		<li>use <code>@include sprite2x($spriteFileName, $spriteFileName-2x);</code> to add retina sprites (with fallback for non-retina).</li>
 		<li>Sprite generation is not part of css compilation, to keep compilation fast. You only need to run <code>gulp sprites</code> each time you add new sprites to assets/images/sprites/.</li>
 	</ul>
 </section>
@@ -67,14 +71,27 @@
 <h1>Gallery</h1>
 
 	<section>
-		<h2>Sprites</h2>
-		<span class="sprite bear"></span>
-		<span class="sprite deflect"></span>
-		<span class="sprite dragon"></span>
+		<h3>Sprites</h3>
+
+		<strong>Retina Sprites</strong><br>
+		<small>If you have a retina-capable device, retina versions of these sprites will appear, otherwise non-retina versions are served.</small>
+
+		<blockquote>
+			<span class="sprite2x bigphoto"></span>
+			<span class="sprite2x monster"></span>
+			<span class="sprite2x sun"></span>
+		</blockquote>
+
+		<strong>Non-Retina Sprites</strong>
+		<blockquote>
+		<span class="sprite bigphoto"></span>
+		<span class="sprite monster"></span>
 		<span class="sprite sun"></span>
+		</blockquote>
+
 	</section>
 
-	<h2>Bourbon Neat Grid &amp; Include-Media</h2>
+	<h3>Bourbon Neat Grid &amp; Include-Media</h3>
 	<p>Three columns. Collapses to two columns at 970px or lower. Collapses to one column at 750px or lower.
 
 	<section class="columns-3">

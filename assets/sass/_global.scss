@@ -3,26 +3,34 @@ html { font-size: $base; }
 
 body {
 	line-height: 1.4;
-	font-family: sans-serif;
+	font-family: $font-body;
 	color: $text;
 	background-color: $bg;
 	margin: $mrg;
 }
 
-h1, h2, h3, p { margin-bottom: $hmrg }
+h1, h2, h3, p {
+	margin-bottom: $hmrg
+}
+
+h1, h2, h3, h4 {
+	line-height: 1.0;
+}
 
 h1 {
-  font-size: $base * 3;
+  font-size: 3rem;
   font-weight: 700;
 }
-h2 { font-size: $base * 2.5 }
-h3 { font-size: $base * 2 }
-h4 { font-size: $base * 1.5 }
-h5 { font-size: $base }
+h2 { font-size: 2.5rem }
+h3 { font-size: 2rem }
+h4 { font-size: 1.5rem }
+h5 { font-size: 1rem }
 
 b, strong, h4 { font-weight: 700; }
 h5 { font-weight: 300; }
 em, i { font-style: italic; }
+small { font-size: 0.8em }
+big { font-size: 1.2em }
 
 code,
 pre {
@@ -30,14 +38,12 @@ pre {
 	color: $red;
 }
 
-small { font-size: 0.8em }
-big { font-size: 1.2em }
-
 section { margin-bottom: $mrg; }
 
 a {
   text-decoration: none;
   color: $blue;
+	-webkit-tap-highlight-color: rgba(0,0,0, 0);
   @include transition(all 0.3s);
 
   &:hover {
@@ -93,12 +99,21 @@ a {
 	}
 }
 
-.sprite {
+// sprites and retina sprites
+.sprite,
+.sprite2x {
 	display: inline-block;
 	margin: $hmrg;
+}
 
-	&.bear { @include sprite($bear); }
-	&.dragon { @include sprite($dragon); }
-	&.deflect { @include sprite($deflect); }
+.sprite {
+	&.monster { @include sprite($monster); }
+	&.bigphoto { @include sprite($bigphoto); }
 	&.sun { @include sprite($sun); }
+}
+
+.sprite2x {
+	&.monster { @include sprite2x($monster, $monster-2x); }
+	&.bigphoto { @include sprite2x($bigphoto, $bigphoto-2x); }
+	&.sun { @include sprite2x($sun, $sun-2x); }
 }

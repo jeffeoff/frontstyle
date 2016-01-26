@@ -1,12 +1,19 @@
 // sass settings and variables
 
 // breakpoints map for include-media.
-$breakpoints: (xs: 750px, sm: 970px, lg: 1170px);
+$breakpoints: (
+  xs: 750px,
+  sm: 970px,
+  lg: 1170px
+);
 
 // neat grid settings
 $grid-columns: 12 !global;
 $max-width: 100% !global;
 $border-box-sizing: true !global;
+
+// fonts
+$font-body: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 
 // colors
 $black: #000;
@@ -20,7 +27,7 @@ $red: #cb3736;
 $blue: #285b76;
 
 // layout variables
-$base: 16px; // our base font-size;
+$base: 18px; // our base font-size;
 $mrg: $base * 2; // most padding and margins should be a multiple of $mrg
 $hmrg: $mrg * 0.5;
 $dmrg: $mrg * 2;

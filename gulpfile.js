@@ -16,7 +16,7 @@ gulp.task('css', function () {
 		.pipe( sourcemaps.init() )
 		.pipe( sass().on('error', sass.logError) )
 		.pipe(autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 8'],
+			browsers: ['last 2 versions', 'ie >= 9'],
 			cascade: false }))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./assets/css'));
@@ -50,7 +50,7 @@ gulp.task('uglify-js', function() {
 gulp.task('prefix', function() {
 	gulp.src('./assets/css/**/*.css')
 		.pipe(autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 8'],
+			browsers: ['last 2 versions', 'ie >= 9'],
 			cascade: false }))
 		.pipe(gulp.dest('./assets/production/prefixed'));
 });
@@ -90,17 +90,22 @@ gulp.task('production-js', function() {
 
 gulp.task('sprites', function () {
   var spriteData = gulp.src('./assets/images/sprites/*.*')
-		.pipe(spritesmith({
-    	imgName: 'sprites.png',
-    	cssName: '_sprites.scss',
-			padding: 0,
-			algorithm: 'binary-tree',
+    .pipe(spritesmith({
+      // Filter out `@2x` (retina) images to separate spritesheet
+      // e.g. `github@2x.png`, `twitter@2x.png`
+      retinaSrcFilter: './assets/images/sprites/*@2x.png',
+      imgName: 'sprites.png',
+      retinaImgName: 'sprites@2x.png',
+      cssName: '_sprites.scss',
+      padding: 0,
+      algorithm: 'binary-tree',
 			cssOpts: {functions: false}
-  }));
+    }));
 
-	spriteData.img.pipe(gulp.dest('./assets/images/'));
-	spriteData.css.pipe(gulp.dest('./assets/sass/'));
+  spriteData.img.pipe(gulp.dest('./assets/images/'));
+  spriteData.css.pipe(gulp.dest('./assets/sass/'));
 });
+
 
 gulp.task('production', ['production-css', 'production-js'], function() {
 });

@@ -1,11 +1,14 @@
 // sprite mixins.
 
 
-@mixin sprite-width($sprite) {
-  width: nth($sprite, 5);
+@mixin sprite-bg-size($sprite) {
+  $sprite-w: nth($sprite, 5);
+  $sprite-h: nth($sprite, 6);
+  background-size: $sprite-w  $sprite-h;
 }
 
-@mixin sprite-height($sprite) {
+@mixin sprite-hw($sprite) {
+  width: nth($sprite, 5);
   height: nth($sprite, 6);
 }
 
@@ -23,6 +26,19 @@
 @mixin sprite($sprite) {
   @include sprite-image($sprite);
   @include sprite-position($sprite);
-  @include sprite-width($sprite);
-  @include sprite-height($sprite);
+  @include sprite-hw($sprite);
+  background-repeat: no-repeat;
+}
+
+// for retina sprites
+@mixin sprite2x($sprite, $sprite2x) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-hw($sprite);
+  background-repeat: no-repeat;
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @include sprite-image($sprite2x);
+    background-size: $spritesheet-width $spritesheet-height;
+  }
 }
