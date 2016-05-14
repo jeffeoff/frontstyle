@@ -25,7 +25,12 @@ gulp.task('css', function () {
 
 gulp.task('css-reload', function () {
 	gulp.src('./assets/sass/*.scss')
-		.pipe(sass().on('error', sass.logError))
+		.pipe( sourcemaps.init() )
+		.pipe( sass().on('error', sass.logError) )
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions', 'ie >= 9'],
+			cascade: false }))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./assets/css'))
 		.pipe(livereload());
 });
@@ -133,12 +138,12 @@ function browserReload(event) {
 
 
 gulp.task('watch', function() {
-	gulp.watch('./assets/sass/**/*.scss', { interval: 150 }, ['css']);
+	gulp.watch('./assets/sass/**/*.scss', { interval: 50 }, ['css']);
 });
 
 
 gulp.task('watch-reload', function() {
 	livereload.listen();
-	gulp.watch('./assets/sass/**/*.scss', { interval: 150 }, ['css-reload']);
-	gulp.watch(['./assets/js/*.js', './*.html'], { interval: 150 }, browserReload);
+	gulp.watch('./assets/sass/**/*.scss', { interval: 50 }, ['css-reload']);
+	gulp.watch(['./assets/js/*.js', './*.html'], { interval: 50 }, browserReload);
 });

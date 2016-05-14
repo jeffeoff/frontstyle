@@ -1,5 +1,15 @@
-// main layout sass for overall html element styling and top level layout.
-html { font-size: $base; }
+// main layout sass for overall html element styling
+html {
+	box-sizing: border-box;
+	font-size: $base;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
 
 body {
 	line-height: 1.4;
@@ -52,6 +62,7 @@ a {
   }
 }
 
+
 .indent { margin-left: $hmrg; }
 
 .list {
@@ -77,27 +88,6 @@ a {
 	border: 1px solid $gray-light;
 }
 
-.columns-3 {
-	// neat grid: set on the row containing columns
-	@include outer-container();
-
-	> .column {
-		// neat grid: to set column widths.
-		@include span-columns(4);
-		@include omega(3n);
-
-		// include-media: to change column widths at different breakpoints
-		@include media("<=sm") {
-			@include span-columns(6);
-			@include omega(2n);
-		}
-
-		@include media("<=xs") {
-			@include span-columns(12);
-			@include omega();
-		}
-	}
-}
 
 // sprites and retina sprites
 .sprite,
