@@ -4,7 +4,7 @@
   <title>frontstyle</title>
   <!-- Viewport mobile tag for sensible mobile support -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="assets/production/production.css">
+	<link rel="stylesheet" href="production/production.css">
 </head>
 <body>
 
@@ -38,20 +38,13 @@
 
 
 <section>
-<h2>SASS Stack</h2>
-	<p>frontstyle comes pre-configured with the following incorporated into sass:</p>
+<h2>Vendor Stack</h2>
+	<p>frontstyle comes pre-configured with the following:</p>
 
 	<ul class="list square">
-		<li><a href="https://necolas.github.io/normalize.css/">normalize.css</a>, a css reset.</li>
-		<li><a href="http://bourbon.io/docs/">bourbon</a>, a sass mixin library.</li>
-		<li><a href="http://include-media.com/">include-media</a>, robust and simple sass media queries.</li>
+		<li><a href="https://necolas.github.io/normalize.css/">normalize.css</a> v4.1.1.</li>
+		<li><a href="http://include-media.com/">include-media</a> v1.4.6.</li>
 	</ul>
-
-	<p><small>Note: This vendor SASS stack is directly @imported via .scss files, not installed by npm. While this
-	locks in the versions included, it also reduces a lot of the cruft added by these packages if you install
-	them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package
-	management systems to install, and I want to keep this entire stack as simple as possible and
-	relying only on npm.</small></p>
 </section>
 
 
@@ -60,19 +53,19 @@
 	<p>Some helpful notes.</p>
 
 	<ul class="list square">
-		<li>scss is compiled via node-sass, a node port of libass, which is much faster as nearly as feature complete as ruby-sass.</li>
+		<li>scss is compiled via node-sass, a node port of libass, which is much faster than ruby-sass.</li>
 		<li>_sprite.scss is automatically updated when sprites are generated.</li>
-		<li>Add images to assets/images/sprites/ to include them when sprites are generated (resulting spritesheet is in assets/images/sprites.png).</li>
-		<li>Any image filenames ending in @2x will be stitched into a separate assets/images/sprites@2x.png sheet.</li>
-		<li>use <code>@include sprite($spriteFileName);</code> to add sprites throughout your scss.</li>
-		<li>use <code>@include sprite2x($spriteFileName, $spriteFileName-2x);</code> to add retina sprites (with fallback for non-retina).</li>
-		<li>Sprite generation is not part of css compilation, to keep compilation fast. You only need to run <code>gulp sprites</code> (<em>or</em> <code>gulp sprites-retina</code>) each time you add new sprites to assets/images/sprites/.</li>
+		<li>Add images to /images/sprites/ to include them when sprites are generated (resulting spritesheet is in /images/sprites.png).</li>
+		<li>Any image filenames ending in @2x will be stitched into a separate /images/sprites@2x.png sheet.</li>
+		<li>use <code>@include sprite($nameOfSpriteFile);</code> to add sprites throughout your scss.</li>
+		<li>use <code>@include sprite2x($nameOfSpriteFile, $nameOfSpriteFile-2x);</code> to add retina sprites (with fallback for non-retina).</li>
+		<li>Sprite generation is not part of css compilation, to keep compilation fast. You only need to run <code>gulp sprites</code> (<em>or</em> <code>gulp sprites-retina</code>) each time you add new sprites to /images/sprites/.</li>
 	</ul>
 </section>
 
 
 <section>
-	<h3>Sprites</h3>
+	<h2>Sprites</h2>
 
 	<strong>Retina Sprites</strong><br>
 	<small>If you have a retina-capable device, retina versions of these sprites will appear, otherwise non-retina versions are served.</small>
@@ -92,7 +85,7 @@
 </section>
 
 <!-- javascript -->
-<script src="assets/production/production.js"></script>
+<script src="production/production.js"></script>
 
 </body>
 </html>

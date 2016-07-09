@@ -1,0 +1,18 @@
+// sprites and retina sprites
+.sprite,
+.sprite2x {
+	display: inline-block;
+	margin: $hmrg;
+}
+
+.sprite {
+	&.monster { @include sprite($monster); }
+	&.bigphoto { @include sprite($bigphoto); }
+	&.sun { @include sprite($sun); }
+}
+
+.sprite2x {
+	&.monster { @include sprite2x($monster, $monster-2x); }
+	&.bigphoto { @include sprite2x($bigphoto, $bigphoto-2x); }
+	&.sun { @include sprite2x($sun, $sun-2x); }
+}

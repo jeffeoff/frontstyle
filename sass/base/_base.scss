@@ -1,0 +1,23 @@
+html {
+	box-sizing: border-box;
+	font-size: $base;
+	background-color: $bg;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+body {
+	line-height: 1.4;
+	font-family: $font-body;
+	color: $text;
+	margin: 0 auto;
+	padding: $qmrg $mrg;
+}
+
+section { margin-bottom: $mrg; }
+
+.indent { margin-left: $hmrg; }

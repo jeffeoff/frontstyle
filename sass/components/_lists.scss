@@ -1,0 +1,13 @@
+.list {
+	margin: 0 0 0 $hmrg;
+	padding: 0;
+
+	li {
+		list-style-type: disc;
+		margin-left: $hmrg;
+		margin-bottom: $hmrg;
+	}
+}
+
+.list.square li { list-style-type: square; }
+.list.number li { list-style-type: decimal; }

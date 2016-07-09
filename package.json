@@ -1,7 +1,7 @@
 {
   "name": "frontstyle",
-  "version": "2.2.0",
-  "description": "a custom front-end styling stack, preconfigured for many common tasks.",
+  "version": "3.0.0",
+  "description": "an efficient custom front-end styling and asset processing stack.",
   "main": "gulp watch",
   "private": "false",
   "repository": {

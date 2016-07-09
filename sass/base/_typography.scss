@@ -1,0 +1,27 @@
+
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+
+h1, h2, h3, h4 {
+	line-height: 1.0;
+	font-family: $font-header;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1rem; }
+
+@include media('<=sm') {
+	h1 { font-size: 2rem; }
+	h2 { font-size: 1.75rem; }
+	h3 { font-size: 1.5rem; }
+	h4 { font-size: 1.25rem; }
+}
+
+b, strong, h1, h4 { font-weight: 700; }
+h5 { font-weight: 300; }
+em, i { font-style: italic; }
+small { font-size: 0.75em; }
+big { font-size: 1.25em; }
