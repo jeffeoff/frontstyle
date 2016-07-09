@@ -16,6 +16,10 @@ var cssDest = './css';
 var jsSrc = './js/**/*.js';
 var spriteSrc = './images/sprites/*.*';
 
+
+gulp.task('default', ['css']);
+
+
 gulp.task('css', function () {
 	return gulp.src(sassSrc)
 		.pipe( sourcemaps.init() )
@@ -132,7 +136,7 @@ function browserReload(event) {
 
 
 gulp.task('watch', function() {
-	gulp.watch('./sass/**/*.scss', { interval: 50 }, ['css']);
+	gulp.watch('./sass/**/*.scss', { interval: 25 }, ['css']);
 });
 
 
@@ -141,6 +145,3 @@ gulp.task('watch-reload', function() {
 	gulp.watch(sassSrc, { interval: 25 }, ['css-reload']);
 	gulp.watch([jsSrc], { interval: 25 }, browserReload);
 });
-
-
-gulp.task('default', ['css']);
