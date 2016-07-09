@@ -57,8 +57,8 @@
 		<li>_sprite.scss is automatically updated when sprites are generated.</li>
 		<li>Add images to /images/sprites/ to include them when sprites are generated (resulting spritesheet is in /images/sprites.png).</li>
 		<li>Any image filenames ending in @2x will be stitched into a separate /images/sprites@2x.png sheet.</li>
-		<li>use <code>@include sprite($nameOfSpriteFile);</code> to add sprites throughout your scss.</li>
-		<li>use <code>@include sprite2x($nameOfSpriteFile, $nameOfSpriteFile-2x);</code> to add retina sprites (with fallback for non-retina).</li>
+		<li>use <code>@include sprite($nameOfImageFile);</code> to add sprites throughout your scss.</li>
+		<li>use <code>@include sprite2x($nameOfImageFile, $nameOfImageFile-2x);</code> to add retina sprites (with fallback for non-retina).</li>
 		<li>Sprite generation is not part of css compilation, to keep compilation fast. You only need to run <code>gulp sprites</code> (<em>or</em> <code>gulp sprites-retina</code>) each time you add new sprites to /images/sprites/.</li>
 	</ul>
 </section>

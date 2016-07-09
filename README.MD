@@ -14,14 +14,12 @@ A portable front-end styling (scss) setup for efficiently handling a variety of 
 1. You must have [node.js](https://nodejs.org/) installed, preferably via [nvm](https://github.com/creationix/nvm).
 1. To install, run `npm install` from the project's root directory:
 
-### SASS Stack ###
+### Vendor Stack ###
 
 frontstyle comes pre-configured with the following:
 
 * [normalize.css](https://necolas.github.io/normalize.css/) v4.1.1.
 * [include-media](http://include-media.com/) v1.4.6.
-
-<small>Note: Some of the vendor SASS stack is directly @imported via .scss files, not installed by npm. While this locks in the versions included, it also reduces a lot of the cruft added by these packages if you install them via npm, bundler, etc. Also, some of these libraries would require gem or bower or other package management systems to install, and I want to keep this entire front end stack as simple as possible and relying only on npm and node.</small>
 
 ### Extras ###
 Some helpful notes and nice things you don't have to worry about.
@@ -33,8 +31,8 @@ Some helpful notes and nice things you don't have to worry about.
 
 * Any image filenames ending in @2x will be stitched into a separate /images/sprites@2x.png sheet.
 
-* Use `@include sprite($nameOfSpriteFile);` mixin to add sprites throughout your scss.
+* Use `@include sprite($nameOfImageFile);` mixin to add sprites throughout your scss.
 
-* Use `@include sprite2x($nameOfSpriteFile, $nameOfSpriteFile-2x);` mixin to add retina sprites (with fallback for non-retina).
+* Use `@include sprite2x($nameOfImageFile, $nameOfImageFile-2x);` mixin to add retina sprites (with fallback for non-retina).
 
 * Sprite generation is not part of css compilation, to keep compilation fast. You only need to run `gulp sprites` (_or_ `gulp sprites-retina`) each time you add new sprites to /images/sprites/.
