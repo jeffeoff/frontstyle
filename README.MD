@@ -1,11 +1,11 @@
 # frontstyle
 A portable front-end styling (scss) setup for efficiently handling a variety of styling tasks. frontstyle  provides the following tasks, pre-configured:
 
-* _fast_ compilation of scss to css (with sourcemaps): `gulp css`
+* _fast_ compilation of scss to css (with autoprefixing and sourcemaps): `gulp css`
 * compilation of scss to css, as scss changes: `gulp watch`
 * as above, but with [livereload](http://livereload.com/)<sup>&#8224;</sup>: `gulp watch-reload`
-* sprite generation: `gulp sprites` or `gulp sprites-retina` if you also have retina sprites.
-* production output: `gulp production` (autoprefixes, uglifies, and concats css + uglifies and concats js).
+* sprite generation: `gulp sprites`, and `gulp sprites-retina` if you also have retina sprites.
+* production output: `gulp production` (uglifies and concats css and js into /production).
 
 <sup>&#8224;</sup> <small>`gulp watch-reload` loads a tiny livereload server which interfaces seamlessly with the livereload plugin. Make sure the little circle in the plugin's toolbar icon is filled-in, you may have to click the toolbar icon to activate it.</small>
 
