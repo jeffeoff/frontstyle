@@ -1,7 +1,7 @@
 html {
 	box-sizing: border-box;
 	font-size: $base;
-	background-color: $bg;
+	background-color: $colorLight;
 }
 
 *,
@@ -12,12 +12,16 @@ html {
 
 body {
 	line-height: 1.4;
-	font-family: $font-body;
-	color: $text;
+	font-family: $fontBody;
+	color: $colorDark;
 	margin: 0 auto;
-	padding: $qmrg $mrg;
+	padding: 0.5rem 2rem;
 }
 
-section { margin-bottom: $mrg; }
+section {
+	margin-bottom: 2rem;
+}
 
-.indent { margin-left: $hmrg; }
+.indent {
+	margin-left: 1rem;
+}

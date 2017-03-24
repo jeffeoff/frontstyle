@@ -7,19 +7,6 @@
 // overall site variables and settings.
 @import 'settings';
 
-// Comment the next line out if you don't have any sprites.
-//
-// To generate sprites, put sprite image files in assets/images/sprites/
-// then run 'gulp sprites' to generate a spritesheet (/images/sprites.png)
-// _sprites.scss will also be generated and placed in /sass/utilities automatically
-//
-// Use the sprite mixin:
-//
-//  @include sprite(name-of-sprite);
-//
-@import 'utilities/sprites';
-@import 'utilities/sprite-mixins';
-
 // any custom global mixins of our own creation.
 @import 'utilities/mixins';
 
@@ -30,4 +17,3 @@
 // components
 @import 'components/links';
 @import 'components/lists';
-@import 'components/images';
