@@ -1,6 +1,6 @@
 {
   "name": "frontstyle",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "a simple front-end styling stack.",
   "main": "gulp watch",
   "private": "false",
@@ -9,18 +9,16 @@
     "url": "https://github.com/jeffeoff/frontstyle"
   },
   "scripts": {
-    "start": "gulp watch"
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
   },
   "author": "Jeff Eoff",
   "license": "ISC",
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-livereload": "^3.8.1",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.1"
-  },
-  "scripts": {
-    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-sass-glob": "^1.0.8"
   }
 }

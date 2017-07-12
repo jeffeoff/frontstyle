@@ -1,19 +1,15 @@
 // main entry point and importer
 // the order of @import's here is important.
-
-@import 'vendor/normalize';
 @import 'vendor/include-media';
 
 // overall site variables and settings.
 @import 'settings';
 
 // any custom global mixins of our own creation.
-@import 'utilities/mixins';
+@import 'utilities/**/*.scss';
 
 // base
-@import 'base/base';
-@import 'base/typography';
+@import 'base/**/*.scss';
 
 // components
-@import 'components/links';
-@import 'components/lists';
+@import 'components/**/*.scss';

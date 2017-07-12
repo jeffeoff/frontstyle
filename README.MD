@@ -16,5 +16,5 @@ A simple SASS styling stack. frontstyle provides the following tasks pre-configu
 
 frontstyle comes pre-configured with the following:
 
-* [normalize.css](https://necolas.github.io/normalize.css/) v5.0.0.
+* [normalize.css](https://necolas.github.io/normalize.css/) v7.0.0.
 * [include-media](http://include-media.com/) v1.4.9.

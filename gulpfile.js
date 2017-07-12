@@ -5,17 +5,19 @@ var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var sassGlob = require('gulp-sass-glob');
 
-var sassSrc = './sass/**/*.scss';
-var cssSrc = './css/**/*.css';
-var cssDest = './css';
+var sassMain = 'sass/main.scss';
+var sassSrc = 'sass/**/*.scss';
+var cssDest = 'css/';
 
 
 gulp.task('default', ['css']);
 
 
 gulp.task('css', function () {
-	return gulp.src(sassSrc)
+	return gulp.src(sassMain)
+    .pipe(sassGlob())
 		.pipe( sourcemaps.init() )
 		.pipe( sass().on('error', sass.logError) )
 		.pipe( autoprefixer({
@@ -27,7 +29,8 @@ gulp.task('css', function () {
 
 
 gulp.task('css-reload', function () {
-	gulp.src(sassSrc)
+	gulp.src(sassMain)
+		.pipe(sassGlob())
 		.pipe( sourcemaps.init() )
 		.pipe( sass().on('error', sass.logError) )
 		.pipe( autoprefixer({
@@ -40,7 +43,7 @@ gulp.task('css-reload', function () {
 
 
 gulp.task('watch', function() {
-	gulp.watch('./sass/**/*.scss', { interval: 10 }, ['css']);
+	gulp.watch(sassSrc, { interval: 10 }, ['css']);
 });
 
 
