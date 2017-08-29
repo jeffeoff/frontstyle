@@ -1,16 +1,17 @@
-// general mixins, as required go here.
+// general mixins go here.
 
 @mixin clearFix {
   &::after {
+    display: table;
     clear: both;
     content: "";
-    display: table;
   }
 }
 
+
 @mixin fluidVideo {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%; // 16:9
   padding-top: 0.72rem;
   height: 0;
 
@@ -23,10 +24,12 @@
   }
 }
 
+
 @mixin fluidImage {
   max-width: 100%;
   height: auto;
 }
+
 
 @mixin hideText {
   overflow: hidden;
@@ -34,10 +37,10 @@
   white-space: nowrap;
 }
 
+
 @mixin animationHacks {
   // "hacks" for better rendering,
   // HW acceleration, etc. from Hover CSS.
   backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
   transform: translateZ(0);
 }
