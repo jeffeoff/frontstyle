@@ -112,6 +112,7 @@ rules:
     - 2
     -
       order:
+        - content
         - display
         - position
         - float
