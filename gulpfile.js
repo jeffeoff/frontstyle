@@ -34,7 +34,7 @@ gulp.task('lint', function () {
 		.pipe( sassGlob() )
 		.pipe( sassLint({
 				maxBuffer: 1228800,
-			  configFile: './.sassLint-config.yml'
+        configFile: './.sass-lint.yml'
 		}) )
 		.pipe( sassLint.format() )
 		.pipe( sassLint.failOnError() )
