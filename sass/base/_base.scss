@@ -1,27 +1,27 @@
 html {
-	box-sizing: border-box;
-	font-size: $base;
-	background-color: $colorLight;
+  box-sizing: border-box;
+  font-size: $base;
+  background-color: $colorLight;
 }
 
 *,
 *::after,
 *::before {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-	margin: 0 auto;
-	padding: 0.5rem 2rem;
-	line-height: 1.4;
-	font-family: $fontBody;
-	color: $colorDark;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  line-height: 1.4;
+  font-family: $fontBody;
+  color: $colorDark;
 }
 
 section {
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .indent {
-	margin-left: 1rem;
+  margin-left: 1rem;
 }

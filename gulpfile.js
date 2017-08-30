@@ -7,11 +7,13 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var sassGlob = require('gulp-sass-glob');
 var sassLint = require('gulp-sass-lint');
+var cssComb = require('gulp-csscomb');
 
-var sassMain = 'sass/main.scss';
-var sassSrc = 'sass/**/*.s+(a|c)ss';
+var sassDest = 'sass/';
 var cssDest = 'css/';
-
+var sassMain = sassDest +'main.scss';
+var sassSrc = sassDest +'**/*.s+(a|c)ss';
+var sassSrcNoVendor = sassDest +'[!vendor]**/*.s+(a|c)ss';
 
 gulp.task('default', ['compile']);
 
@@ -30,7 +32,7 @@ gulp.task('css', function () {
 
 
 gulp.task('lint', function () {
-	return gulp.src( sassSrc )
+	return gulp.src( sassSrcNoVendor )
 		.pipe( sassGlob() )
 		.pipe( sassLint({
 				maxBuffer: 1228800,
@@ -48,7 +50,15 @@ gulp.task('lint', function () {
 });
 
 
-gulp.task('compile', ['lint']);
+gulp.task('comb', function() {
+  return gulp.src( sassSrcNoVendor )
+    .pipe( sassGlob() )
+    .pipe( cssComb() )
+    .pipe( gulp.dest( sassDest ) );
+});
+
+
+gulp.task('compile', ['comb', 'lint']);
 
 gulp.task('css-reload', function () {
 	gulp.src(sassMain)
