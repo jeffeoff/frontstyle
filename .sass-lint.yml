@@ -85,7 +85,7 @@ rules:
       - padding
 
   no-empty-rulesets: 2
-  no-extends: 1
+  no-extends: 0
   no-warn: 2
   no-debug: 2
   no-ids: 1
