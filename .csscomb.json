@@ -21,14 +21,5 @@
     "strip-spaces": true,
     "tab-size": true,
     "unitless-zero": true,
-    "sort-order": [
-      "$variable",
-      "$extend",
-      "$include",
-      "content",
-      "display",
-      "position",
-      "float",
-      "..."
-    ]
+    "sort-order": false
 }
