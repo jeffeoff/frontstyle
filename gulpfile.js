@@ -31,6 +31,17 @@ gulp.task('css', function () {
 });
 
 
+gulp.task('min', function () {
+	return gulp.src( sassMain )
+    .pipe( sassGlob() )
+		.pipe( sass().on('error', sass.logError) )
+		.pipe( autoprefixer({
+			browsers: ['last 2 versions', 'ie >= 9'],
+			cascade: false }) )
+		.pipe( gulp.dest(cssDest) );
+});
+
+
 gulp.task('lint', function () {
 	return gulp.src( sassSrcNoVendor )
 		.pipe( sassGlob() )
