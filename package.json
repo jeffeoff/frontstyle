@@ -1,6 +1,6 @@
 {
   "name": "frontstyle",
-  "version": "5.3.1",
+  "version": "5.4",
   "description": "a simple front-end styling stack.",
   "main": "gulp watch",
   "private": "false",
