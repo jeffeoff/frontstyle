@@ -22,22 +22,11 @@ gulp.task('css', function () {
 	return gulp.src( sassMain )
     .pipe( sassGlob() )
 		.pipe( sourcemaps.init() )
-		.pipe( sass().on('error', sass.logError) )
+		.pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError) )
 		.pipe( autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 9'],
+			browsers: ['last 2 versions'],
 			cascade: false }) )
-		.pipe( sourcemaps.write() )
-		.pipe( gulp.dest(cssDest) );
-});
-
-
-gulp.task('min', function () {
-	return gulp.src( sassMain )
-    .pipe( sassGlob() )
-		.pipe( sass().on('error', sass.logError) )
-		.pipe( autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 9'],
-			cascade: false }) )
+		.pipe( sourcemaps.write('./sourcemaps') )
 		.pipe( gulp.dest(cssDest) );
 });
 
@@ -52,11 +41,11 @@ gulp.task('lint', function () {
 		.pipe( sassLint.format() )
 		.pipe( sassLint.failOnError() )
 		.pipe( sourcemaps.init() )
-		.pipe( sass().on('error', sass.logError) )
+		.pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError) )
 		.pipe( autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 9'],
+			browsers: ['last 2 versions'],
 			cascade: false }) )
-		.pipe( sourcemaps.write() )
+		.pipe( sourcemaps.write('./sourcemaps') )
 		.pipe( gulp.dest(cssDest) );
 });
 
@@ -75,11 +64,11 @@ gulp.task('css-reload', function () {
 	gulp.src(sassMain)
 		.pipe( sassGlob() )
 		.pipe( sourcemaps.init() )
-		.pipe( sass().on('error', sass.logError) )
+		.pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError) )
 		.pipe( autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 9'],
+			browsers: ['last 2 versions'],
 			cascade: false }) )
-		.pipe( sourcemaps.write() )
+		.pipe( sourcemaps.write('./sourcemaps') )
 		.pipe( gulp.dest(cssDest) )
 		.pipe( livereload() );
 });
