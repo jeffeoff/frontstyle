@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
-var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var sassGlob = require('gulp-sass-glob');
 var sassLint = require('gulp-sass-lint');
@@ -21,12 +20,10 @@ gulp.task('default', ['compile']);
 gulp.task('css', function () {
 	return gulp.src( sassMain )
     .pipe( sassGlob() )
-		.pipe( sourcemaps.init() )
 		.pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError) )
 		.pipe( autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false }) )
-		.pipe( sourcemaps.write('./sourcemaps') )
 		.pipe( gulp.dest(cssDest) );
 });
 
@@ -40,12 +37,10 @@ gulp.task('lint', function () {
 		}) )
 		.pipe( sassLint.format() )
 		.pipe( sassLint.failOnError() )
-		.pipe( sourcemaps.init() )
 		.pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError) )
 		.pipe( autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false }) )
-		.pipe( sourcemaps.write('./sourcemaps') )
 		.pipe( gulp.dest(cssDest) );
 });
 
@@ -63,12 +58,10 @@ gulp.task('compile', ['comb', 'lint']);
 gulp.task('css-reload', function () {
 	gulp.src(sassMain)
 		.pipe( sassGlob() )
-		.pipe( sourcemaps.init() )
 		.pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError) )
 		.pipe( autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false }) )
-		.pipe( sourcemaps.write('./sourcemaps') )
 		.pipe( gulp.dest(cssDest) )
 		.pipe( livereload() );
 });
