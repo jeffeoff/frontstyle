@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
+var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var sassGlob = require('gulp-sass-glob');
 var sassLint = require('gulp-sass-lint');
@@ -10,6 +11,7 @@ var cssComb = require('gulp-csscomb');
 
 var sassDest = 'sass/';
 var cssDest = 'css/';
+var cssProdDest = 'prod/css';
 var sassMain = sassDest +'main.scss';
 var sassSrc = sassDest +'**/*.s+(a|c)ss';
 var sassSrcNoVendor = sassDest +'[!vendor]**/*.s+(a|c)ss';
@@ -20,10 +22,12 @@ gulp.task('default', ['compile']);
 gulp.task('css', function () {
 	return gulp.src( sassMain )
     .pipe( sassGlob() )
-		.pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError) )
+		.pipe( sourcemaps.init() )
+		.pipe( sass({outputStyle: 'compact'}).on('error', sass.logError) )
 		.pipe( autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false }) )
+		.pipe( sourcemaps.write('./sourcemaps') )
 		.pipe( gulp.dest(cssDest) );
 });
 
@@ -37,10 +41,12 @@ gulp.task('lint', function () {
 		}) )
 		.pipe( sassLint.format() )
 		.pipe( sassLint.failOnError() )
-		.pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError) )
+		.pipe( sourcemaps.init() )
+		.pipe( sass({outputStyle: 'compact'}).on('error', sass.logError) )
 		.pipe( autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false }) )
+		.pipe( sourcemaps.write('./sourcemaps') )
 		.pipe( gulp.dest(cssDest) );
 });
 
@@ -55,16 +61,31 @@ gulp.task('comb', function() {
 
 gulp.task('compile', ['comb', 'lint']);
 
-gulp.task('css-reload', function () {
-	gulp.src(sassMain)
-		.pipe( sassGlob() )
+
+gulp.task('prod', function () {
+	return gulp.src( sassMain )
+    .pipe( sassGlob() )
 		.pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError) )
 		.pipe( autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false }) )
+		.pipe( gulp.dest(cssProdDest) );
+});
+
+
+gulp.task('css-reload', function () {
+	gulp.src(sassMain)
+		.pipe( sassGlob() )
+		.pipe( sourcemaps.init() )
+		.pipe( sass({outputStyle: 'compact'}).on('error', sass.logError) )
+		.pipe( autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false }) )
+		.pipe( sourcemaps.write('./sourcemaps') )
 		.pipe( gulp.dest(cssDest) )
 		.pipe( livereload() );
 });
+
 
 gulp.task('livereload', ['watch-reload']);
 gulp.task('reload', ['watch-reload']);
