@@ -13,10 +13,15 @@ var sassDest = 'sass/';
 var cssDest = 'css/';
 var cssProdDest = 'prod/css';
 var sassMain = sassDest +'main.scss';
-var sassSrc = sassDest +'**/*.s+(a|c)ss';
-var sassSrcNoVendor = sassDest +'[!vendor]**/*.s+(a|c)ss';
 
-gulp.task('default', ['compile']);
+// get all sass files but exclude any vendor sass inside of sass/
+var sassSrc = [sassDest +'**/*.s+(a|c)ss', '!'+ sassDest +'/vendor/**'];
+
+// same as above, but also exclude main.scss and _settings.scss so
+// comb doesn't insert hard imports for every scss file.
+var sassSrcComb = [sassDest +'**/*.s+(a|c)ss', '!'+ sassMain, '!'+ sassDest +'_settings.scss', '!'+ sassDest +'/vendor/**'];
+
+gulp.task('default', ['css']);
 
 
 gulp.task('css', function () {
@@ -33,7 +38,7 @@ gulp.task('css', function () {
 
 
 gulp.task('lint', function () {
-	return gulp.src( sassSrcNoVendor )
+	return gulp.src( sassSrc )
 		.pipe( sassGlob() )
 		.pipe( sassLint({
 				maxBuffer: 1228800,
@@ -52,7 +57,7 @@ gulp.task('lint', function () {
 
 
 gulp.task('comb', function() {
-  return gulp.src( sassSrcNoVendor )
+  return gulp.src( sassSrcComb )
     .pipe( sassGlob() )
     .pipe( cssComb() )
     .pipe( gulp.dest( sassDest ) );
