@@ -1,9 +1,10 @@
-@mixin hideText {
+@mixin visuallyHidden {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
   height: 1px;
   width: 1px;
+  font-size: 0.1px;
   margin: 0;
   padding: 0;
   color: transparent;

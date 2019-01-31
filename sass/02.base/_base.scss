@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+  font-size: $base;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-family: $fontBody;
+  background-color: $colorLight;
+  color: $colorDark;
+}
