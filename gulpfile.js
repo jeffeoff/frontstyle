@@ -14,7 +14,7 @@ var cssDest = 'css/';
 var sassMain = sassDest +'main.scss';
 
 // get all sass files but exclude any vendor sass inside of sass/
-var sassSrc = [sassDest +'**/*.s+(a|c)ss', '!'+ sassDest +'/vendor/**'];
+var sassSrc = [sassDest +'**/*.s+(a|c)ss', '!'+ sassDest +'/00.vendor/**'];
 
 // same as above, but also exclude main.scss and _settings.scss so
 // comb doesn't insert hard imports for every scss file.

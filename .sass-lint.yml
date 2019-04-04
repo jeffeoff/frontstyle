@@ -8,7 +8,7 @@ options:
 files:
   include: 'sass/**/*.s+(a|c)ss'
   ignore:
-    - 'sass/vendor/**/*.*'
+    - 'sass/00.vendor/**/*.*'
 
 # Rule Configuration
 rules:
