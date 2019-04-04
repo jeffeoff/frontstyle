@@ -53,23 +53,23 @@ rules:
   max-file-line-count: 0
   max-line-length: 0
   mixins-before-declarations:
-    - 2
+    - 1
     -
       exclude:
         - media
 
   mixin-name-format: 0
   nesting-depth:
-    - 2
+    - 1
     -
       max-depth:
         - 2
 
   no-attribute-selectors: 0
   no-color-hex: 0
-  no-color-keywords: 2
+  no-color-keywords: 1
   no-color-literals:
-    - 2
+    - 1
     -
       allow-rgba:
         - true
