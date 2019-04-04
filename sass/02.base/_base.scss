@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-size: $base;
+  font-size: $baseFontSize;
   margin: 0;
   padding: 0;
 }
@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  font-family: $fontBody;
-  background-color: $colorLight;
-  color: $colorDark;
+  font-family: $font-body;
+  background-color: $color-light;
+  color: $color-dark;
 }
