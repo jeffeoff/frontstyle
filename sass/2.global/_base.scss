@@ -1,8 +1,10 @@
 html {
   box-sizing: border-box;
-  font-size: $baseFontSize;
+  font-size: $base-font-size;
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 *,
@@ -15,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  font-family: $font-body;
-  background-color: $color-light;
-  color: $color-dark;
+  font-family: $font--body;
+  background-color: $color--light;
+  color: $color--dark;
 }

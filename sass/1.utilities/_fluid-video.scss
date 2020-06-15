@@ -1,10 +1,11 @@
-@mixin fluidVideo {
+@mixin fluid-video {
   position: relative;
   padding-bottom: 56.25%; // 16:9
   padding-top: 0.72rem;
   height: 0;
 
-  iframe {
+  iframe,
+  video {
     position: absolute;
     top: 0;
     left: 0;

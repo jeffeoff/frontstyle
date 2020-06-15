@@ -4,8 +4,6 @@
 // overall site variables and settings.
 @import 'settings';
 
-@import '00.vendor/**/*.scss';
-@import '01.utilities/**/*.scss';
-@import '02.base/**/*.scss';
-@import '03.layout/**/*.scss';
-@import '04.components/**/*.scss';
+@import '1.utilities/**/*.scss';
+@import '2.global/**/*.scss';
+@import '3.components/**/*.scss';
